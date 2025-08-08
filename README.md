@@ -1,36 +1,73 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+````markdown
+# Invoice App - Frontend
 
-## Getting Started
+This is the frontend for the Invoice App, built with Next.js, TypeScript, and Tailwind CSS. It provides a user interface to manage customers and invoices by interacting with a corresponding backend API.
 
-First, run the development server:
+## Prerequisites
+
+Before you begin, ensure you have the following installed on your system:
+* [Node.js](https://nodejs.org/) (version 18.x or later)
+* [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
+
+## How to Run Locally
+
+Follow these steps to get the frontend application running on your local machine.
+
+### 1. Clone the Repository
+
+First, clone the repository to your local machine (if you haven't already).
+
+```bash
+git clone <your-repository-url>
+cd <your-project-directory>
+````
+
+### 2\. Install Dependencies
+
+Install all the necessary project dependencies using npm (or yarn).
+
+```bash
+npm install
+```
+
+### 3\. Configure Environment Variables
+
+The application needs to know the URL of your backend API.
+
+  * Create a new file named `.env.local` in the root of the project directory.
+
+  * Add the following line to the file, replacing the URL with the actual address of your running backend server:
+
+    ```env
+    NEXT_PUBLIC_API_URL=[http://127.0.0.1:8000/api](http://127.0.0.1:8000/api)
+    ```
+
+### 4\. Run the Development Server
+
+Start the Next.js development server. Make sure your backend application is already running before you start the frontend.
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 5\. Open the Application
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Once the server is running, you will see a message in your terminal, typically:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+✓ Ready on http://localhost:3000
+```
 
-## Learn More
+Open your web browser and navigate to **[http://localhost:3000/login](https://www.google.com/search?q=http://localhost:3000/login)** to use the application.
 
-To learn more about Next.js, take a look at the following resources:
+-----
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Project Structure Overview
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+  * **/app**: Contains all the pages and routes for the application.
+  * **/components**: Reusable UI components (Buttons, Cards, Inputs, etc.).
+  * **/contexts**: React Context providers, such as for authentication (`AuthContext`).
+  * **/lib**: Utility functions, including the main API client (`api.ts`).
+  * **/services**: Functions that communicate with specific backend API endpoints.
+  * **/types**: Shared TypeScript type definitions and interfaces.
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
